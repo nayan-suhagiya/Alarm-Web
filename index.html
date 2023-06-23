@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alarm Web</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+      integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+      #hours,
+      #min,
+      #second {
+        font-size: 36px;
+      }
+
+      .time_divider {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h5 class="my-4">Alarm Clock!!</h5>
+      <div class="row my-4">
+        <div class="col-sm-2">
+          <p class="fw-bolder">Current Time :-</p>
+          <span id="hours" class="text-primary"></span>
+          <span class="time_divider">:</span>
+          <span id="min" class="text-primary"></span>
+          <span class="time_divider">:</span>
+          <span id="second" class="text-secondary"></span>
+        </div>
+        <div class="col-sm-8">
+          <p class="fw-bolder">Set Alarm For (<span id="ddmmyy"></span>):-</p>
+
+          <form>
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="hour">Select Hour</label>
+                  <select name="hour" id="hour" class="form-select"></select>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="hour">Select Minute</label>
+                  <select
+                    name="minute"
+                    id="minute"
+                    class="form-select"
+                  ></select>
+                </div>
+              </div>
+              <div class="col-3">
+                <button
+                  type="button"
+                  class="btn btn-outline-success mt-4"
+                  onclick="setAlarm()"
+                >
+                  Set
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-sm-2">
+          <span class="fw-bolder">Your Alarm :-</span>
+        </div>
+        <div class="col-sm-6">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Hour</th>
+                  <th>Minute</th>
+                  <th>Date</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="play">
+      <source src="Over The Horizon S6.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
